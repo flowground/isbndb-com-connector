@@ -1,0 +1,208 @@
+{
+    "title": "ISBNdb",
+    "description": "Definition of ISBNdb.com API",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/isbndb.com/1.0.1/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.isbndb.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "api_key": {
+                "label": "x-api-key (api_key)",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "get_author__name_": {
+            "main": "./lib/actions/get_author__name_.js",
+            "title": "Gets author details",
+            "description": "Returns the name and a list of books by the author.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_author__name_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_authors__query_": {
+            "main": "./lib/actions/get_authors__query_.js",
+            "title": "Search authors",
+            "description": "This returns a list of authors whos name matches the given query",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_authors__query_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_book__isbn_": {
+            "main": "./lib/actions/get_book__isbn_.js",
+            "title": "Gets book details",
+            "description": "Returns the book details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_book__isbn_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_books__query_": {
+            "main": "./lib/actions/get_books__query_.js",
+            "title": "Search books",
+            "description": "This returns a list of books that match the query",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_books__query_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_publisher__name_": {
+            "main": "./lib/actions/get_publisher__name_.js",
+            "title": "Gets publisher details",
+            "description": "Returns details and a list of books by the publisher.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_publisher__name_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_publishers__query_": {
+            "main": "./lib/actions/get_publishers__query_.js",
+            "title": "Search publishers",
+            "description": "This returns a list of publishers that match the given query",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_publishers__query_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_search": {
+            "main": "./lib/actions/get_search.js",
+            "title": "Search all ISBNDB databases",
+            "description": "Uses a free query string compatible with ElasticSearch 6 to search in any of the ISBNDB's databases",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_search.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_stats": {
+            "main": "./lib/actions/get_stats.js",
+            "title": "Gets status on the ISBNDB Database",
+            "description": "Returns a status object about the ISBNDB database.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_stats.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_subject__name_": {
+            "main": "./lib/actions/get_subject__name_.js",
+            "title": "Gets subject details",
+            "description": "Returns details and a list of books with subject.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_subject__name_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_subjects__query_": {
+            "main": "./lib/actions/get_subjects__query_.js",
+            "title": "Search subjects",
+            "description": "This returns a list of subjects that match the given query",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_subjects__query_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

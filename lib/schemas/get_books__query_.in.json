@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "query": {
+            "required": true,
+            "type": "string"
+        },
+        "page": {
+            "required": false,
+            "type": "string"
+        },
+        "author": {
+            "required": false,
+            "type": "string"
+        },
+        "pageSize": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

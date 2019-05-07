@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "pageSize": {
+            "required": false,
+            "type": "string"
+        },
+        "query": {
+            "required": true,
+            "type": "string"
+        },
+        "page": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
